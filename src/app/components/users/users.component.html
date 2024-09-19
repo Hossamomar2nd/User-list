@@ -1,0 +1,29 @@
+<div>
+    <div class="container">
+        <div class="row mt-5 mb-5 gap-3 text-center">
+            @for (user of userList; track $index) {
+
+            <div class="col-md-4 col-sm-6 mb-4 " class="card "
+                style="width: 18rem; border-radius: 20px; background-color: #f4f4f4;">
+                <img [src]="user.image" class="card-img-top mt-1"
+                    style="border: 3px solid #104146; border-radius: 50%; height: 50px; width: 50px; margin: auto;"
+                    alt="Sunset Over the Sea" />
+                <div class="card-body">
+                    <p class="card-text">
+                        <strong class="card-text">{{user.username}}</strong>
+                        <br>
+                        <strong class="card-text">{{user.email}}</strong>
+                        <br>
+                        {{user.phone}}
+                    </p>
+                    @if (user.is_verified) {
+                    <i class="fa fa-circle text-success m-1"></i>
+                    }@else {
+                    <i class="fa fa-circle text-danger m-1"></i>
+                    }
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
